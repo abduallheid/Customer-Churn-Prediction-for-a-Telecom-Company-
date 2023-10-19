@@ -5,34 +5,38 @@ import joblib
 import streamlit as st 
 import time
 from sklearn.preprocessing import StandardScaler
-st.info(body="Developed by Eng: Abduallh Eid")
+
+st.header("Orange Telecom churn Model")
+st.info(body="Developed by Eng: Abduallh Eid ")
 st.code(body="Gmail: abduallheid87@gmail.com")
 
 # Load the Model 
 model= joblib.load("RF_v1.ml")
 
-st.header("Orange Telecommunications Churn Customer App")
 # image and text
 st.image("orange.png",caption="Orange Telecom churn Model")
 st.text(body="The Orange Telecom's Churn Dataset, which consists of cleaned\n customer activity data (features), along with a churn label\n specifying whether a customer canceled the subscription,\n will be used to develop predictive models")
 
-
+@st.cache
+def convert_df_to_csv(df):
+  # IMPORTANT: Cache the conversion to prevent computation on every rerun
+  return df.to_csv().encode('utf-8')
+# function csv file upload
 def upload_data():
-
-    # function csv file upload
+    
     file =st.file_uploader("Upload file csv consisting of customer activity data")
     def upload (file):  
         st = st.open(file  + ".csv")  
         df=pd.read_csv(file + ".csv")
         st.dataframe(df.head(10)) 
-                
+     # function to show sample data           
     def show(file): 
         df=pd.read_csv(file)
         st.dataframe(df.head(10))
 
     if st.button("Show sample data"):  # show state
         show(file)
-
+    # function to preprocess the features and predict 
     def forcast(file):
 
         df=pd.read_csv(file)
@@ -43,22 +47,22 @@ def upload_data():
                 df[col]=df[col].replace({"yes":1,"no":0})
             elif df[col].dtype=="bool":
                 df[col]=df[col].astype(int)
-
+        # scaling the features to match the distribution of data 
         SC=StandardScaler()
         Sdata=SC.fit_transform(df) # scaled dataset
         df["churned"]=0    # creat churn column
-        for i in range(0, 75): #adding forcast records
+        for i in range(0, len(df)): #adding forcast records
             pred=model.predict(Sdata[i:i+1])
-                        
+             # record new column           
             df.iloc[i:i+1,-1:]=pred
-        # compression_opts=dict(method="zip",archive_name="forcast.csv")
-        # df.to_csv("forcast.zip",index=False, compression=compression_opts)
-        st.download_button("download",df.to_csv(index=False))    
-    if st.button("download predicted records csv"):
-        bar=st.progress(30)
+        # downloading predicted data as csv file
+        st.download_button(label="download predicted records csv",data=convert_df_to_csv(df) ,mime='text/csv')   #index=False).encode('utf-8')
+    if st.button("predict"):
+        bar=st.progress(15)
         time.sleep(2)
         bar.progress(100)
         forcast(file)
+        
         
 
 
@@ -101,12 +105,9 @@ def manual():
     download_data =download_data.to_csv(index=False)    
     st.download_button("download",download_data+".csv")    
 # choice the way you want    
-but1 = st.button("ADD features manually")
-but2 = st.button("upload features csv files")
-but1,but2= st.columns([2,1])
-if but2:
-    upload_data()
-elif but1:
+st.sidebar.header("chosee way to process")
+chos=st.sidebar.selectbox("",("input features manuall","upload features csv files"))
+if chos =="input features manually":
     manual()
-st.columns()
-      
+elif chos =="upload features csv files":
+    upload_data()
