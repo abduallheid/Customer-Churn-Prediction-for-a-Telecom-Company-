@@ -3,7 +3,7 @@ Developed a machine learning model to predict customer churn for a Telecom compa
 
 ![](orange.png)
 
-[🚀 Go to web app](https://orangechurn.streamlit.app/)
+[🚀 Go to Model App](https://orangechurn.streamlit.app/)
 
 real Dataset from Orange.
 
