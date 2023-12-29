@@ -36,6 +36,8 @@ The data is preprocessed by performing the following tasks:
     - Scaling numerical variables: The numerical variables are scaled using standardization to have zero mean and unit variance.
     - Splitting the data: The data is split into training (80%) and testing (20%) sets, with stratification to preserve the class balance.
 ## Dashboard-and-report-Power-Bi:
+
+![](Dashboard/churn.png)
 Below are a potential KPIs created for a telecom dashboard:
 - Churn Rate:  The percentage of customers who have churned.
 - Average Call Duration: The average duration of calls across all customers.
@@ -59,8 +61,11 @@ After analyzing the data and discovering patterns, I will ask some important que
 - Question2: How does the presence of international plans impact customer churn?
 - Question3: What is the relationship between the number of customer service calls and churn?
 - Question4: How do total charges correlate with customer churn?
-- Question: Are there specific patterns in call duration (day, evening, night) for customers who churn?
+- Question5: Are there specific patterns in call duration (day, evening, night) for customers who churn?
+## 
+[Dahboard](Dashboard/churn.pdf)
 
+[Power Bi](Dashboard/churn.pbix)
 ## Model building:
 Several machine learning models are built using different algorithms, such as logistic regression, decision tree, random forest, support vector machine, and gradient boosting. The models are trained on the training set and evaluated on the testing set using various metrics, such as accuracy, precision, recall, f1-score, and roc_auc_score. The best model is selected based on the highest roc_auc_score, which is a measure of how well the model can distinguish between the positive (churned) and negative (not churned) classes.
 ## Model evaluation: 
