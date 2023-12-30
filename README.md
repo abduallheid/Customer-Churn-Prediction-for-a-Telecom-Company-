@@ -1,3 +1,6 @@
+![](https://media1.giphy.com/media/3o7btR8a6VixToiGBi/giphy.gif?cid=ecf05e47jyplzaubb3nt6zbc6sv5o96tdu3xwvnmunyat260&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+
+
 # Customer-Churn-Prediction-for-orange-Telecom-Company
 Developed a machine learning model to predict customer churn for a Telecom company, with the goal of reducing customer attrition and improving customer retention strategies. 
 
@@ -14,7 +17,6 @@ real Dataset from Orange.
 - [📊 Dashboard-and-report-Power-Bi](#dashboard-and-report-power-bi)
 - [📂 Model building](#model-building)
 - [⚙️ Model evaluation](#model-evaluation)
-- [🚀 Getting Started](#-getting-started)
 
 ## 📍 Overview
 
