@@ -1,4 +1,3 @@
-![](https://media1.giphy.com/media/3o7btR8a6VixToiGBi/giphy.gif?cid=ecf05e47jyplzaubb3nt6zbc6sv5o96tdu3xwvnmunyat260&ep=v1_gifs_search&rid=giphy.gif&ct=g)
 
 
 # Customer-Churn-Prediction-for-orange-Telecom-Company
@@ -6,19 +5,19 @@ Developed a machine learning model to predict customer churn for a Telecom compa
 
 ![](orange.png)
 
-[🚀 Go to Model App](https://orangechurn.streamlit.app/)
+[ Go to Model App](https://orangechurn.streamlit.app/)
 
 real Dataset from Orange.
 
-## 📖 Table of Contents
+##  Contents
 
-- [📍  Data collection](#data-collection)
-- [📦 Data preprocessing](#data-preprocessing)
-- [📊 Dashboard-and-report-Power-Bi](#dashboard-and-report-power-bi)
-- [📂 Model building](#model-building)
-- [⚙️ Model evaluation](#model-evaluation)
+- [  Data collection](#data-collection)
+- [ Data preprocessing](#data-preprocessing)
+- [ Dashboard-and-report-Power-Bi](#dashboard-and-report-power-bi)
+- [ Model building](#model-building)
+- [ Model evaluation](#model-evaluation)
 
-## 📍 Overview
+## Overview
 
 This is a README file for the project of developing a machine learning model to predict customer churn for a Telecom company. The goal of this project is to reduce customer attrition and improve customer retention strategies by identifying the factors that influence customer churn and the customers who are most likely to churn.
 
