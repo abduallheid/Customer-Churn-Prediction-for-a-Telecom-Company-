@@ -2,11 +2,11 @@
 
 import io
 import logging
-from typing import List, Dict, Any
+from typing import List
 import pandas as pd
 from fastapi import FastAPI, HTTPException, UploadFile, File, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import StreamingResponse
 
 from telecom_churn import __version__
 from telecom_churn.config import config

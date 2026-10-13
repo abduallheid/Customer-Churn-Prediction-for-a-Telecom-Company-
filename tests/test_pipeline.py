@@ -1,6 +1,5 @@
 """Unit tests for Scikit-Learn Pipeline assembly and training."""
 
-import pytest
 import numpy as np
 import pandas as pd
 from telecom_churn.models.pipeline import create_churn_pipeline

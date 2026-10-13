@@ -1,6 +1,6 @@
 """End-to-end Scikit-Learn Pipeline factory for Telecom Churn Prediction."""
 
-from typing import Optional, Any
+from typing import Optional
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression

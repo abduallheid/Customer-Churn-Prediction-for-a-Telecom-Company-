@@ -1,6 +1,5 @@
 """Unit tests for transformers and preprocessing pipeline."""
 
-import pytest
 import numpy as np
 import pandas as pd
 from telecom_churn.data.preprocessor import CleanDataFrameTransformer, build_preprocessor

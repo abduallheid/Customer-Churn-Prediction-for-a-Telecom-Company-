@@ -1,7 +1,7 @@
 """Model evaluation metrics and reporting tools."""
 
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 import numpy as np
 import pandas as pd
 from sklearn.metrics import (

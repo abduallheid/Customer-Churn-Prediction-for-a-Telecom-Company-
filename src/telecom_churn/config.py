@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent

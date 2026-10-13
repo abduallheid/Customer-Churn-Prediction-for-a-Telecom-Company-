@@ -1,7 +1,5 @@
 """Unit tests for ChurnPredictor inference engine."""
 
-import pytest
-import pandas as pd
 from telecom_churn.models.predictor import get_predictor
 from telecom_churn.schemas import RiskTier, PredictionOutput, BatchPredictionOutput
 

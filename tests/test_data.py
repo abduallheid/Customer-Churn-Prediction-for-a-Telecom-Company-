@@ -1,6 +1,5 @@
 """Unit tests for dataset loading and splitting."""
 
-import pytest
 import pandas as pd
 from telecom_churn.data.loader import load_churn_data, split_churn_data
 from telecom_churn.config import config

@@ -3,7 +3,6 @@
 import io
 import sys
 from pathlib import Path
-import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -12,10 +11,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 if str(PROJECT_ROOT / "src") not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from telecom_churn.config import config
-from telecom_churn.schemas import CustomerInput, RiskTier
-from telecom_churn.models.predictor import get_predictor
-from telecom_churn.ui.styles import CUSTOM_CSS
+from telecom_churn.config import config  # noqa: E402
+from telecom_churn.schemas import CustomerInput, RiskTier  # noqa: E402
+from telecom_churn.models.predictor import get_predictor  # noqa: E402
+from telecom_churn.ui.styles import CUSTOM_CSS  # noqa: E402
 
 # Page Configuration
 st.set_page_config(
