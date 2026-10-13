@@ -4,7 +4,7 @@ import io
 import logging
 from typing import List
 import pandas as pd
-from fastapi import FastAPI, HTTPException, UploadFile, File, status
+from fastapi import FastAPI, HTTPException, UploadFile, File, Query, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
@@ -152,7 +152,7 @@ def predict_batch_customers(customers: List[CustomerInput]):
 @app.post("/predict/upload-csv", tags=["Prediction"])
 async def predict_csv_upload(
     file: UploadFile = File(..., description="CSV file with customer activity data"),
-    download_as_csv: bool = False,
+    download_as_csv: bool = Query(default=False, description="Whether to download result as CSV file"),
 ):
     """Upload a CSV file to generate churn scores.
 

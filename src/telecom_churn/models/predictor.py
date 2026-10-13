@@ -50,8 +50,15 @@ class ChurnPredictor:
             logger.info(f"Loading churn model pipeline from: {self.model_path}")
             self.pipeline = joblib.load(self.model_path)
         except Exception as e:
-            logger.error(f"Failed to load model from {self.model_path}: {e}")
-            raise
+            logger.warning(
+                f"Could not load pre-saved artifact ({e}). Retraining in current environment..."
+            )
+            from telecom_churn.models.trainer import train_churn_model
+
+            result = train_churn_model(save_artifact=True)
+            self.pipeline = result["pipeline"]
+            self.metadata = result["metadata"]
+            return
 
         if self.metadata_path.exists():
             try:
@@ -143,15 +150,15 @@ class ChurnPredictor:
 
         # Build list of individual PredictionOutputs
         predictions_list = []
-        for i, row in df.iterrows():
-            p = float(probs[i])
-            tier = RiskTier(risk_tiers[i])
+        for idx, (_, row) in enumerate(df.iterrows()):
+            p = float(probs[idx])
+            tier = RiskTier(risk_tiers[idx])
             conf = float(abs(p - 0.50) * 2.0)
             drivers = self._identify_risk_drivers(row.to_dict(), p)
             recs = self._generate_recommendations(row.to_dict(), tier)
             predictions_list.append(
                 PredictionOutput(
-                    churn_prediction=bool(preds[i]),
+                    churn_prediction=bool(preds[idx]),
                     churn_probability=round(p, 4),
                     risk_tier=tier,
                     confidence=round(conf, 4),
