@@ -1,0 +1,164 @@
+{
+  "model_name": "Orange Telecom Churn Predictor",
+  "algorithm": "random_forest",
+  "scikit_learn_version": "1.6.1",
+  "trained_at": "2026-10-13T10:13:52.059353Z",
+  "training_samples": 4000,
+  "test_samples": 1000,
+  "target_column": "churned",
+  "features": [
+    "intl_plan",
+    "voice_mail_plan",
+    "account_length",
+    "number_vmail_messages",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_day_charge",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_eve_charge",
+    "total_night_minutes",
+    "total_night_calls",
+    "total_night_charge",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "total_intl_charge",
+    "number_customer_service_calls"
+  ],
+  "categorical_columns": [
+    "intl_plan",
+    "voice_mail_plan"
+  ],
+  "numerical_columns": [
+    "account_length",
+    "number_vmail_messages",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_day_charge",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_eve_charge",
+    "total_night_minutes",
+    "total_night_calls",
+    "total_night_charge",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "total_intl_charge",
+    "number_customer_service_calls"
+  ],
+  "metrics": {
+    "accuracy": 0.95,
+    "precision": 0.8699,
+    "recall": 0.7589,
+    "f1_score": 0.8106,
+    "roc_auc": 0.9054,
+    "pr_auc": 0.8491,
+    "confusion_matrix": {
+      "true_negatives": 843,
+      "false_positives": 16,
+      "false_negatives": 34,
+      "true_positives": 107
+    },
+    "classification_report": {
+      "Retained (0)": {
+        "precision": 0.9612314709236032,
+        "recall": 0.9813736903376019,
+        "f1-score": 0.9711981566820277,
+        "support": 859.0
+      },
+      "Churned (1)": {
+        "precision": 0.8699186991869918,
+        "recall": 0.7588652482269503,
+        "f1-score": 0.8106060606060606,
+        "support": 141.0
+      },
+      "accuracy": 0.95,
+      "macro avg": {
+        "precision": 0.9155750850552975,
+        "recall": 0.8701194692822761,
+        "f1-score": 0.8909021086440441,
+        "support": 1000.0
+      },
+      "weighted avg": {
+        "precision": 0.948356370108741,
+        "recall": 0.95,
+        "f1-score": 0.9485546711353163,
+        "support": 1000.0
+      }
+    },
+    "feature_importances": [
+      {
+        "feature": "number_customer_service_calls",
+        "importance": 0.1553
+      },
+      {
+        "feature": "total_day_charge",
+        "importance": 0.1438
+      },
+      {
+        "feature": "total_day_minutes",
+        "importance": 0.1373
+      },
+      {
+        "feature": "intl_plan",
+        "importance": 0.1049
+      },
+      {
+        "feature": "total_eve_minutes",
+        "importance": 0.0558
+      },
+      {
+        "feature": "total_eve_charge",
+        "importance": 0.0544
+      },
+      {
+        "feature": "total_intl_calls",
+        "importance": 0.0404
+      },
+      {
+        "feature": "total_intl_minutes",
+        "importance": 0.0391
+      },
+      {
+        "feature": "total_night_charge",
+        "importance": 0.0369
+      },
+      {
+        "feature": "total_intl_charge",
+        "importance": 0.0369
+      },
+      {
+        "feature": "total_night_minutes",
+        "importance": 0.0367
+      },
+      {
+        "feature": "account_length",
+        "importance": 0.0311
+      },
+      {
+        "feature": "total_eve_calls",
+        "importance": 0.0286
+      },
+      {
+        "feature": "total_night_calls",
+        "importance": 0.0269
+      },
+      {
+        "feature": "total_day_calls",
+        "importance": 0.0265
+      },
+      {
+        "feature": "number_vmail_messages",
+        "importance": 0.0248
+      },
+      {
+        "feature": "voice_mail_plan",
+        "importance": 0.0205
+      }
+    ]
+  },
+  "risk_thresholds": {
+    "low_risk_max": 0.35,
+    "high_risk_min": 0.65
+  }
+}
